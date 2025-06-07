@@ -12,20 +12,18 @@ class Agent:
         right = sensor[4]
 
 # Controlling the Steering of the car to turn left or right.
-        if right<1 or midright<1.2:
+        if right<1.24 or midright<1.43:
            steering='left'
-        if right < 1 or midright < 1.2:
-            steering = 'left'
-        elif left < 1 or midleft < 1.2:
+        elif left<1.24 or midleft<1.43:
             steering = 'right'
         else:
             steering = 'straight'
 
 # Go ahead or brake controls.
-        if front > 1.2 and velo_car < 0.15:
+        if front > 1.3 and velo_car < 0.25:
             goahead = 'accelerate'
-        elif front < 0.5 or velo_car > 0.40:
-            goahead = 'coast'
+        elif front < 0.5 or velo_car > 0.8:
+            goahead = 'brake'
         else:
             goahead = 'coast'
 

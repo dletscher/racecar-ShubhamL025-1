@@ -5,4 +5,4 @@ Large_Circle	Not simulated
 Fast	Not simulated
 
 Score	0
-grade	32.5
+grade	27.142857142857146

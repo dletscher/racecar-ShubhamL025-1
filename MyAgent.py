@@ -16,7 +16,7 @@ class Agent:
            steering='left'
         elif left<1 or midleft<1.4:
             steering = 'right'
-        elif left-right>0.5:
+        elif left-right>0.5: #Here i tried to use this difference to keep it in Center.
             steering = 'left'
         elif right-left>0.5:
             steering = 'right'
@@ -24,11 +24,18 @@ class Agent:
             steering = 'straight'
 
 # Go ahead or brake controls.
-        if front > 0.7 and velo_car < 0.15:
-            goahead = 'accelerate'
-        elif front <0.6 or velo_car>0.4:
-            goahead = 'coast'
+        if front<0.7:
+            goahead = 'brake'
+        elif front>1.5: #this change made it to change its velocity depending upon its distence of front sensor.
+            if velocity<0.15:
+                goahead = 'accelerate'
+            else:
+                goahead = 'coast'
+        elif front>1:
+            if velocity<0.12:
+                goahead= 'accelerate'
+            else:
+                goahead = 'coast'
         else:
             goahead = 'coast'
-
         return (steering, goahead)

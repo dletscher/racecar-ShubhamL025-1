@@ -27,12 +27,12 @@ class Agent:
         if front<0.7:
             goahead = 'brake'
         elif front>1.5: #this change made it to change its velocity depending upon its distence of front sensor.
-            if velocity<0.15:
+            if velo_car<0.15:
                 goahead = 'accelerate'
             else:
                 goahead = 'coast'
         elif front>1:
-            if velocity<0.12:
+            if velo_car<0.12:
                 goahead= 'accelerate'
             else:
                 goahead = 'coast'
